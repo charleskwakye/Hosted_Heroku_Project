@@ -1,0 +1,30 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Supermarket project</title>
+    <link rel="stylesheet" th:href="@{../img/style.css}">
+</head>
+<body>
+<p><a href="/1_input">New Customer</a></p>
+<p><a href="/3_nStaffMember">New Staff Member</a></p>
+<p><a href="/5_staffList">Staff List</a></p>
+<p><a href="/6_customerList">Customers List</a></p>
+<p><a href="/7_nSupermarket">New Supermarket</a></p>
+<p><a href="/8_supermarketList">List of supermarkets</a></p>
+<p><a href="/9_nDepartment">New Department</a></p>
+
+
+<form action="/searchDepartment">
+    <p>
+        <label for="departmentName">Department Name</label>
+        <input type="text" name="departmentName" id="departmentName">
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Search for Department">
+    </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../img/style.css">
+</head>
+<body>
+<h2 th:text="'We found this department: '+${searchResults.getName()}"></h2>
+<p th:if="${searchResults.isRefrigerated()}">- Refrigerated department</p>
+<p th:if="${!searchResults.isRefrigerated()}">- No refrigeration</p>
+<p th:text="'Responsible: '+${searchResults.getResponsible().getFirstName()} + ' '+${searchResults.getResponsible().getSurName()}"></p>
+<img onerror="this.src='img/noimage.jpg'" th:src="@{${searchResults.getPhoto()}}" alt="">
+</body>
+</html>

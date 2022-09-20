@@ -1,0 +1,30 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Supermarket</title>
+    <link rel="stylesheet" th:href="@{../img/style.css}">
+</head>
+<body>
+<form action="/submittingNewSupermarket">
+    <p>
+        <label for="supermarketName">Name supermarket</label>
+        <input type="text" name="supermarketName" id="supermarketName">
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Confirm Supermarket">
+    </p>
+    <p>
+        <label for="generalManager"></label>
+        <select name="generalManager" id="generalManager">
+            <option value="-1">Choose a general manager</option>
+            <option th:each="staff : ${staffList}"
+                    th:text="${staff.getFirstName()} + ' ' + ${staff.getSurName()}"
+                    th:value="${staffStat.index}"></option>
+        </select>
+    </p>
+</form>
+</body>
+</html>

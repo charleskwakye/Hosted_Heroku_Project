@@ -1,0 +1,53 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Department</title>
+    <link rel="stylesheet" th:href="@{../img/style.css}">
+</head>
+<body>
+<h2>New Department</h2>
+<form action="/submittingNewDepartment">
+    <p>
+        <label for="departmentName">Name Department:</label>
+        <input type="text" name="departmentName" id="departmentName">
+    </p>
+    <p>
+        <label for="photo">Photo:</label>
+        <input type="text" name="photo" id="photo">
+    </p>
+    <p>
+        <label for="refrigerated">Refrigerated:</label>
+        <input type="checkbox" name="refrigerated" id="refrigerated" value="refrigerated">
+    </p>
+
+    <p>
+        <!--    You use supermarketStat.index for value starting from 0 and supermarketStat.count starting from 1-->
+        <label for="supermarketOption"></label>
+        <select name="supermarketOption" id="supermarketOption">
+            <option value="-1">In which supermarket?</option>
+            <option th:each="supermarket : ${supermarketList}"
+                    th:text="${supermarket.getName}"
+                    th:value="${supermarketStat.index}"></option>
+        </select>
+    </p>
+
+    <p>
+        <label for="responsibleStaff"></label>
+        <select name="responsibleStaff" id="responsibleStaff">
+            <option value="-1">who is responsible for this department?</option>
+            <option th:each="staff : ${staffList}"
+                    th:text="${staff.getFirstName()} + ' ' + ${staff.getSurName()}"
+                    th:value="${staffStat.index}"></option>
+        </select>
+    </p>
+
+    <p>
+        <input type="submit" name="submit" value="Confirm department">
+    </p>
+</form>
+<p><a href="/">Back to homepage</a></p>
+</body>
+</html>

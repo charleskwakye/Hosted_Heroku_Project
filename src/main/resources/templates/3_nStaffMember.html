@@ -1,0 +1,34 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermarket new staff</title>
+    <link rel="stylesheet" th:href="@{../img/style.css}">
+</head>
+<body>
+<form action="/submittingStaff">
+    <p>
+        <label for="firstName"> First Name</label>
+        <input type="text" name="firstName" id="firstName">
+    </p>
+    <p>
+        <label for="surName">Surname</label>
+        <input type="text" name="surName" id="surName">
+    </p>
+    <p>
+        <label for="employedDate">Employed since</label>
+        <input type="date" name="employedDate" id="employedDate">
+    </p>
+    <p>
+        <label for="workingStudent"> Working student</label>
+        <input type="checkbox" name="workingStudent" id="workingStudent">
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Confirm staff member">
+    </p>
+    <p><a href="/">Back to homepage</a></p>
+</form>
+</body>
+</html>

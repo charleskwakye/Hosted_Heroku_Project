@@ -1,0 +1,46 @@
+<!--Name - Charles Nana Kwakye-->
+<!--student number - r0879035-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermarket Project</title>
+    <link rel="stylesheet" href="../img/style.css">
+</head>
+<body>
+<h2>Charles Nana Kwakye Supermarket Project</h2>
+
+<form action="/submitting">
+    <p>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName">
+    </p>
+    <p>
+        <label for="surName">Surname</label>
+        <input type="text" name="surName" id="surName">
+    </p>
+    <p>
+        <label for="yearOfBirth">Year of Birth</label>
+        <input type="text" name="yearOfBirth" id="yearOfBirth">
+    </p>
+
+
+    <p th:each="supermarket : ${supermarketList}">
+        <label th:text="${supermarket.getName()}"
+               th:for="${supermarketStat.index}"></label>
+        <input th:value="${supermarketStat.index}"
+               th:id="${supermarketStat.index}"
+               th:checked="${supermarketStat.index} == 0"
+               type="radio" name="supermarketName">
+    </p>
+
+    <p>
+        <input type="submit" name="submit" value="Continue and generate cardnumber">
+    </p>
+
+</form>
+
+
+<p><a href="/">Back to homepage</a></p>
+</body>
+</html>
