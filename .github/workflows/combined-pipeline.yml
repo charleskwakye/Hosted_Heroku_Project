@@ -39,6 +39,7 @@ jobs:
           path: ./target/supermarket-0.0.1-SNAPSHOT.jar
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 4
     needs: test
     steps:
       - name: Checkout
